@@ -1,0 +1,38 @@
+{
+  "spider_train_process_text": {
+    "file_name": "spider_train_process_text.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": "history"
+    }
+  },
+  "spider_dev_process_text": {
+    "file_name": "spider_dev_process_text.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": "history"
+    }
+  },
+  "spider_train_process_code": {
+    "file_name": "spider_train_process_code.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": "history"
+    }
+  },
+  "spider_dev_process_code": {
+    "file_name": "spider_dev_process_code.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": "history"
+    }
+  }
+}
