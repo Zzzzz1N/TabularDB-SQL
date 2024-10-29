@@ -1,0 +1,275 @@
+ Train Start time: 2024-10-23 19:52:15
+10/23/2024 19:52:18 - WARNING - dbgpt_hub_sql.llm_base.config_parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+10/23/2024 19:52:18 - INFO - dbgpt_hub_sql.llm_base.config_parser - Process rank: 0, device: cuda:0, n_gpu: 1
+  distributed training: True, compute dtype: torch.bfloat16
+10/23/2024 19:52:18 - INFO - dbgpt_hub_sql.llm_base.config_parser - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=True,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=False,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=no,
+eval_use_gather_object=False,
+evaluation_strategy=None,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=16,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0002,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/root/autodl-fs/output/codellama-13b/CodeLlama-13b-sql-qlora-0shot/runs/Oct23_19-52-18_autodl-container-5584468052-894cd0f4,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=50,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=cosine_with_restarts,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=8.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/root/autodl-fs/output/codellama-13b/CodeLlama-13b-sql-qlora-0shot,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=1,
+predict_with_generate=False,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=/root/autodl-fs/output/codellama-13b/CodeLlama-13b-sql-qlora-0shot,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=2000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+sortish_sampler=False,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_liger_kernel=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+10/23/2024 19:52:18 - INFO - dbgpt_hub_sql.data_process.data_utils - Loading dataset example_text2sql_train.json...
+10/23/2024 19:52:18 - WARNING - dbgpt_hub_sql.data_process.data_utils - Checksum failed: missing SHA-1 hash value in dataset_info.json.
+10/23/2024 19:52:19 - INFO - dbgpt_hub_sql.llm_base.load_tokenizer - Quantizing model to 4 bit.
+10/23/2024 19:52:26 - INFO - dbgpt_hub_sql.llm_base.adapter - Fine-tuning method: LoRA
+10/23/2024 19:52:27 - INFO - dbgpt_hub_sql.llm_base.load_tokenizer - trainable params: 52428800 || all params: 13068456960 || trainable%: 0.4012
+10/23/2024 19:52:27 - INFO - dbgpt_hub_sql.data_process.data_utils - Add pad token: <unk>
+input_ids:
+[1, 518, 25580, 29962, 3532, 14816, 29903, 6778, 13, 3492, 526, 263, 8444, 29892, 3390, 1319, 322, 15993, 20255, 29889, 29849, 1234, 408, 1371, 3730, 408, 1950, 29892, 1550, 1641, 9109, 29889, 29871, 3575, 6089, 881, 451, 3160, 738, 10311, 1319, 29892, 443, 621, 936, 29892, 11021, 391, 29892, 7916, 391, 29892, 304, 27375, 29892, 18215, 29892, 470, 27302, 2793, 29889, 3529, 9801, 393, 596, 20890, 526, 5374, 635, 443, 5365, 1463, 322, 6374, 297, 5469, 29889, 13, 3644, 263, 1139, 947, 451, 1207, 738, 4060, 29892, 470, 338, 451, 2114, 1474, 16165, 261, 296, 29892, 5649, 2020, 2012, 310, 22862, 1554, 451, 1959, 29889, 960, 366, 1016, 29915, 29873, 1073, 278, 1234, 304, 263, 1139, 29892, 3113, 1016, 29915, 29873, 6232, 2089, 2472, 29889, 13, 29966, 829, 14816, 29903, 6778, 13, 13, 29902, 864, 366, 304, 1044, 408, 263, 3758, 8638, 297, 4565, 310, 385, 1342, 2566, 29892, 366, 817, 871, 304, 736, 278, 4576, 1899, 304, 592, 29889, 21140, 340, 338, 385, 15278, 393, 16612, 263, 3414, 29892, 14350, 263, 2933, 393, 7128, 2486, 1614, 2167, 278, 2009, 29889, 13, 29908, 13, 2277, 3379, 4080, 29901, 13, 311, 8076, 29918, 21895, 3743, 6131, 1316, 408, 14311, 29892, 2343, 29892, 10643, 29889, 6137, 14311, 756, 4341, 1316, 408, 10317, 29918, 1367, 29892, 4408, 29892, 6760, 362, 29892, 22125, 292, 29892, 7038, 657, 29918, 262, 29918, 29933, 453, 1080, 29892, 11848, 29918, 10495, 2376, 12712, 29889, 10317, 29918, 1367, 338, 278, 7601, 1820, 29889, 13, 3562, 2343, 756, 4341, 1316, 408, 2343, 29918, 1367, 29892, 1024, 29892, 6345, 29918, 3859, 29892, 5046, 29889, 2343, 29918, 1367, 338, 278, 7601, 1820, 29889, 13, 3562, 10643, 756, 4341, 1316, 408, 14311, 29918, 1367, 29892, 2343, 29918, 1367, 29892, 13201, 29918, 627, 292, 29889, 14311, 29918, 1367, 338, 278, 7601, 1820, 29889, 13, 1576, 2343, 29918, 1367, 310, 10643, 338, 278, 9117, 1820, 310, 2343, 29918, 1367, 310, 2343, 29889, 13, 1576, 14311, 29918, 1367, 310, 10643, 338, 278, 9117, 1820, 310, 10317, 29918, 1367, 310, 14311, 29889, 13, 13, 13, 2277, 29937, 4290, 29901, 13, 5328, 1784, 15883, 310, 278, 5840, 1860, 526, 9642, 1135, 29871, 29945, 29953, 1577, 13, 13, 2277, 29937, 5103, 29901, 518, 29914, 25580, 29962, 29871, 5097, 2302, 22798, 3895, 2343, 5754, 5046, 29871, 1405, 259, 29945, 29953, 2]
+inputs:
+<s> [INST] <<SYS>>
+You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe.  Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.
+If a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don't know the answer to a question, please don't share false information.
+<</SYS>>
+
+I want you to act as a SQL terminal in front of an example database, you need only to return the sql command to me.Below is an instruction that describes a task, Write a response that appropriately completes the request.
+"
+##Instruction:
+department_management contains tables such as department, head, management. Table department has columns such as Department_ID, Name, Creation, Ranking, Budget_in_Billions, Num_Employees. Department_ID is the primary key.
+Table head has columns such as head_ID, name, born_state, age. head_ID is the primary key.
+Table management has columns such as department_ID, head_ID, temporary_acting. department_ID is the primary key.
+The head_ID of management is the foreign key of head_ID of head.
+The department_ID of management is the foreign key of Department_ID of department.
+
+
+###Input:
+How many heads of the departments are older than 56 ?
+
+###Response: [/INST]  SELECT count(*) FROM head WHERE age  >  56</s>
+label_ids:
+[-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 5097, 2302, 22798, 3895, 2343, 5754, 5046, 29871, 1405, 259, 29945, 29953, 2]
+labels:
+<unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk> SELECT count(*) FROM head WHERE age  >  56</s>
+10/23/2024 19:53:02 - WARNING - dbgpt_hub_sql.llm_base.loggings - Previous log file in this folder will be deleted.
+{'loss': 0.4028, 'grad_norm': 0.18485747277736664, 'learning_rate': 0.00019993414517786287, 'epoch': 0.09}
+{'loss': 0.1891, 'grad_norm': 0.2079707682132721, 'learning_rate': 0.0001997366674486034, 'epoch': 0.18}
+{'loss': 0.1727, 'grad_norm': 0.19829367101192474, 'learning_rate': 0.00019940782690943637, 'epoch': 0.28}
+{'loss': 0.1486, 'grad_norm': 0.18008802831172943, 'learning_rate': 0.00019894805667506615, 'epoch': 0.37}
+{'loss': 0.1347, 'grad_norm': 0.29724594950675964, 'learning_rate': 0.00019835796230723287, 'epoch': 0.46}
+{'loss': 0.1197, 'grad_norm': 0.2582339346408844, 'learning_rate': 0.00019763832101712928, 'epoch': 0.55}
+{'loss': 0.1143, 'grad_norm': 0.269790381193161, 'learning_rate': 0.00019679008064173867, 'epoch': 0.65}
+{'loss': 0.1065, 'grad_norm': 0.18520645797252655, 'learning_rate': 0.00019581435839544203, 'epoch': 0.74}
+{'loss': 0.1016, 'grad_norm': 0.21565702557563782, 'learning_rate': 0.00019471243939853908, 'epoch': 0.83}
+{'loss': 0.1027, 'grad_norm': 0.21645955741405487, 'learning_rate': 0.0001934857749846208, 'epoch': 0.92}
+{'loss': 0.0937, 'grad_norm': 0.14620685577392578, 'learning_rate': 0.0001921359807890232, 'epoch': 1.02}
+{'loss': 0.0645, 'grad_norm': 0.17781126499176025, 'learning_rate': 0.0001906648346208798, 'epoch': 1.11}
+{'loss': 0.0714, 'grad_norm': 0.24799656867980957, 'learning_rate': 0.00018907427412157533, 'epoch': 1.2}
+{'loss': 0.0668, 'grad_norm': 0.19111423194408417, 'learning_rate': 0.00018736639421268545, 'epoch': 1.29}
+{'loss': 0.0653, 'grad_norm': 0.16655802726745605, 'learning_rate': 0.0001855434443367628, 'epoch': 1.39}
+{'loss': 0.0667, 'grad_norm': 0.1649796962738037, 'learning_rate': 0.0001836078254946042, 'epoch': 1.48}
+{'loss': 0.0619, 'grad_norm': 0.12551075220108032, 'learning_rate': 0.00018156208708290121, 'epoch': 1.57}
+{'loss': 0.0606, 'grad_norm': 0.19910883903503418, 'learning_rate': 0.00017940892353643866, 'epoch': 1.66}
+{'loss': 0.059, 'grad_norm': 0.09958337247371674, 'learning_rate': 0.00017715117077926422, 'epoch': 1.76}
+{'loss': 0.0579, 'grad_norm': 0.15167254209518433, 'learning_rate': 0.00017479180248950295, 'epoch': 1.85}
+{'loss': 0.0486, 'grad_norm': 0.23226521909236908, 'learning_rate': 0.00017233392618273645, 'epoch': 1.94}
+{'loss': 0.0515, 'grad_norm': 0.18001006543636322, 'learning_rate': 0.00016978077911910502, 'epoch': 2.03}
+{'loss': 0.032, 'grad_norm': 0.12915632128715515, 'learning_rate': 0.00016713572403952403, 'epoch': 2.12}
+{'loss': 0.0317, 'grad_norm': 0.13517220318317413, 'learning_rate': 0.0001644022447366296, 'epoch': 2.22}
+{'loss': 0.0375, 'grad_norm': 0.17141351103782654, 'learning_rate': 0.0001615839414662879, 'epoch': 2.31}
+{'loss': 0.0299, 'grad_norm': 0.185337632894516, 'learning_rate': 0.00015868452620571087, 'epoch': 2.4}
+{'loss': 0.0332, 'grad_norm': 0.34526321291923523, 'learning_rate': 0.00015570781776442426, 'epoch': 2.49}
+{'loss': 0.0344, 'grad_norm': 0.17054083943367004, 'learning_rate': 0.00015265773675452718, 'epoch': 2.59}
+{'loss': 0.0338, 'grad_norm': 0.12553559243679047, 'learning_rate': 0.0001495383004268678, 'epoch': 2.68}
+{'loss': 0.0371, 'grad_norm': 0.1710074245929718, 'learning_rate': 0.00014635361737993667, 'epoch': 2.77}
+{'loss': 0.0361, 'grad_norm': 0.21525605022907257, 'learning_rate': 0.00014310788214844618, 'epoch': 2.86}
+{'loss': 0.0337, 'grad_norm': 0.15991555154323578, 'learning_rate': 0.00013980536967872378, 'epoch': 2.96}
+{'loss': 0.0255, 'grad_norm': 0.13615749776363373, 'learning_rate': 0.00013645042969819544, 'epoch': 3.05}
+{'loss': 0.0185, 'grad_norm': 0.12402395904064178, 'learning_rate': 0.0001330474809863752, 'epoch': 3.14}
+{'loss': 0.018, 'grad_norm': 0.1206909790635109, 'learning_rate': 0.00012960100555490617, 'epoch': 3.23}
+{'loss': 0.0166, 'grad_norm': 0.09619126468896866, 'learning_rate': 0.0001261155427443192, 'epoch': 3.33}
+{'loss': 0.0179, 'grad_norm': 0.2174682468175888, 'learning_rate': 0.00012259568324528335, 'epoch': 3.42}
+{'loss': 0.0201, 'grad_norm': 0.09133201837539673, 'learning_rate': 0.00011904606305222381, 'epoch': 3.51}
+{'loss': 0.0169, 'grad_norm': 0.18268020451068878, 'learning_rate': 0.00011547135735726992, 'epoch': 3.6}
+{'loss': 0.0163, 'grad_norm': 0.13104121387004852, 'learning_rate': 0.00011187627439257638, 'epoch': 3.7}
+10/24/2024 04:01:55 - INFO - dbgpt_hub_sql.llm_base.model_trainer - Saving model checkpoint to /root/autodl-fs/output/codellama-13b/CodeLlama-13b-sql-qlora-0shot/checkpoint-2000
+{'loss': 0.0193, 'grad_norm': 0.11355523020029068, 'learning_rate': 0.00010826554922912733, 'epoch': 3.79}
+{'loss': 0.018, 'grad_norm': 0.09651805460453033, 'learning_rate': 0.00010464393754019131, 'epoch': 3.88}
+{'loss': 0.0172, 'grad_norm': 0.09524080157279968, 'learning_rate': 0.00010101620933764071, 'epoch': 3.97}
+{'loss': 0.0095, 'grad_norm': 0.07456375658512115, 'learning_rate': 9.73871426893865e-05, 'epoch': 4.07}
+{'loss': 0.0098, 'grad_norm': 0.05814855173230171, 'learning_rate': 9.376151742620147e-05, 'epoch': 4.16}
+{'loss': 0.0104, 'grad_norm': 0.025658678263425827, 'learning_rate': 9.01441088462225e-05, 'epoch': 4.25}
+{'loss': 0.0108, 'grad_norm': 0.07024179399013519, 'learning_rate': 8.65396814254222e-05, 'epoch': 4.34}
+{'loss': 0.0081, 'grad_norm': 0.23024001717567444, 'learning_rate': 8.29529825423347e-05, 'epoch': 4.43}
+{'loss': 0.0079, 'grad_norm': 0.05647628381848335, 'learning_rate': 7.938873622530005e-05, 'epoch': 4.53}
+{'loss': 0.0078, 'grad_norm': 0.06198539957404137, 'learning_rate': 7.58516369304635e-05, 'epoch': 4.62}
+{'loss': 0.0092, 'grad_norm': 0.03135460615158081, 'learning_rate': 7.23463433587239e-05, 'epoch': 4.71}
+{'loss': 0.0058, 'grad_norm': 0.08753654360771179, 'learning_rate': 6.887747231977533e-05, 'epoch': 4.8}
+{'loss': 0.0076, 'grad_norm': 0.06828644871711731, 'learning_rate': 6.544959265132358e-05, 'epoch': 4.9}
+{'loss': 0.0077, 'grad_norm': 0.10161576420068741, 'learning_rate': 6.206721920148608e-05, 'epoch': 4.99}
+{'loss': 0.0042, 'grad_norm': 0.018465016037225723, 'learning_rate': 5.873480688230164e-05, 'epoch': 5.08}
+{'loss': 0.0042, 'grad_norm': 0.31168586015701294, 'learning_rate': 5.545674480218161e-05, 'epoch': 5.17}
+{'loss': 0.0041, 'grad_norm': 0.03732452541589737, 'learning_rate': 5.2237350485030865e-05, 'epoch': 5.27}
+{'loss': 0.0045, 'grad_norm': 0.14519253373146057, 'learning_rate': 4.9080864183652174e-05, 'epoch': 5.36}
+{'loss': 0.0034, 'grad_norm': 0.041573666036129, 'learning_rate': 4.5991443294924776e-05, 'epoch': 5.45}
+{'loss': 0.0034, 'grad_norm': 0.10270236432552338, 'learning_rate': 4.2973156884111344e-05, 'epoch': 5.54}
+{'loss': 0.0056, 'grad_norm': 0.0626637190580368, 'learning_rate': 4.002998032550666e-05, 'epoch': 5.64}
+{'loss': 0.0035, 'grad_norm': 0.04340772330760956, 'learning_rate': 3.7165790066486464e-05, 'epoch': 5.73}
+{'loss': 0.0042, 'grad_norm': 0.043874360620975494, 'learning_rate': 3.4384358521852236e-05, 'epoch': 5.82}
+{'loss': 0.0034, 'grad_norm': 0.058316294103860855, 'learning_rate': 3.168934910519722e-05, 'epoch': 5.91}
+{'loss': 0.0036, 'grad_norm': 0.012635412625968456, 'learning_rate': 2.9084311403837163e-05, 'epoch': 6.01}
+{'loss': 0.0018, 'grad_norm': 0.03468484804034233, 'learning_rate': 2.6572676503661764e-05, 'epoch': 6.1}
+{'loss': 0.0021, 'grad_norm': 0.024235278367996216, 'learning_rate': 2.4157752470063532e-05, 'epoch': 6.19}
+{'loss': 0.0019, 'grad_norm': 0.07036817073822021, 'learning_rate': 2.184271999089662e-05, 'epoch': 6.28}
+{'loss': 0.0017, 'grad_norm': 0.053666602820158005, 'learning_rate': 1.963062818720409e-05, 'epoch': 6.37}
+{'loss': 0.0018, 'grad_norm': 0.022308461368083954, 'learning_rate': 1.752439059723171e-05, 'epoch': 6.47}
+{'loss': 0.0023, 'grad_norm': 0.02675762213766575, 'learning_rate': 1.552678133901676e-05, 'epoch': 6.56}
+{'loss': 0.0016, 'grad_norm': 0.0954938679933548, 'learning_rate': 1.364043145660725e-05, 'epoch': 6.65}
+{'loss': 0.0015, 'grad_norm': 0.008655267767608166, 'learning_rate': 1.1867825454723024e-05, 'epoch': 6.74}
+{'loss': 0.0024, 'grad_norm': 0.008289945311844349, 'learning_rate': 1.0211298026423555e-05, 'epoch': 6.84}
+{'loss': 0.0015, 'grad_norm': 0.03689711168408394, 'learning_rate': 8.673030978091989e-06, 'epoch': 6.93}
+{'loss': 0.0012, 'grad_norm': 0.004462845623493195, 'learning_rate': 7.255050355785697e-06, 'epoch': 7.02}
+{'loss': 0.0008, 'grad_norm': 0.024662142619490623, 'learning_rate': 5.959223776738132e-06, 'epoch': 7.11}
+{'loss': 0.0014, 'grad_norm': 0.007790735457092524, 'learning_rate': 4.787257969527004e-06, 'epoch': 7.21}
+{'loss': 0.0015, 'grad_norm': 0.010176335461437702, 'learning_rate': 3.740696526147991e-06, 'epoch': 7.3}
+{'loss': 0.0016, 'grad_norm': 0.010269149206578732, 'learning_rate': 2.8209178689553083e-06, 'epoch': 7.39}
+10/24/2024 12:10:27 - INFO - dbgpt_hub_sql.llm_base.model_trainer - Saving model checkpoint to /root/autodl-fs/output/codellama-13b/CodeLlama-13b-sql-qlora-0shot/checkpoint-4000
+{'loss': 0.0012, 'grad_norm': 0.03538968041539192, 'learning_rate': 2.029133435146424e-06, 'epoch': 7.48}
+{'loss': 0.0012, 'grad_norm': 0.038961634039878845, 'learning_rate': 1.3663860811825468e-06, 'epoch': 7.58}
+{'loss': 0.0012, 'grad_norm': 0.007986770011484623, 'learning_rate': 8.335487092460126e-07, 'epoch': 7.67}
+{'loss': 0.0012, 'grad_norm': 0.018529433757066727, 'learning_rate': 4.3132311754395805e-07, 'epoch': 7.76}
+{'loss': 0.0009, 'grad_norm': 0.008641758002340794, 'learning_rate': 1.602390759723904e-07, 'epoch': 7.85}
+{'loss': 0.0012, 'grad_norm': 0.021798808127641678, 'learning_rate': 2.0653628358158205e-08, 'epoch': 7.95}
+10/24/2024 13:30:18 - INFO - dbgpt_hub_sql.llm_base.model_trainer - Saving model checkpoint to /root/autodl-fs/output/codellama-13b/CodeLlama-13b-sql-qlora-0shot/checkpoint-4328
+{'train_runtime': 63442.1885, 'train_samples_per_second': 1.092, 'train_steps_per_second': 0.068, 'train_loss': 0.0355306716873388, 'epoch': 8.0}
+***** train metrics *****
+  epoch                    =       7.9972
+  total_flos               = 3283513498GF
+  train_loss               =       0.0355
+  train_runtime            =  17:37:22.18
+  train_samples_per_second =        1.092
+  train_steps_per_second   =        0.068
+10/24/2024 13:30:24 - INFO - dbgpt_hub_sql.llm_base.model_trainer - Saving model checkpoint to /root/autodl-fs/output/codellama-13b/CodeLlama-13b-sql-qlora-0shot
+Figure saved: /root/autodl-fs/output/codellama-13b/CodeLlama-13b-sql-qlora-0shot/training_loss.png
+10/24/2024 13:30:26 - WARNING - dbgpt_hub_sql.llm_base.model_trainer - No metric eval_loss to plot.
+############train end###############
+Train End time: Thu Oct 24 13:30:27 CST 2024
+Time elapsed:   hour 38 min 
